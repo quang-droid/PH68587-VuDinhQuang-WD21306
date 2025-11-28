@@ -2,12 +2,6 @@
 // Chuong trinh phan mem Bat dau thuc thi & Ket thuc o day.
 
 #include <stdio.h>
-void kiemTraChucNang()
-{
-}
-void lapChucNang() 
-{
-}
 
 int main()
 {
