@@ -41,12 +41,37 @@ void kiemTraSoNguyen()
 //Done
 void uocChungvaBoiChung()
 {
-	double soThuNhat, soThuHai, uocSoChung, boiSoChung;
+	int a, b, uocSoChung, boiSoChung;
 	printf("Nhap so thu nhat: ");
-	scanf_s("%lf", &soThuNhat);
+	scanf_s("%d", &a);
 	printf("Nhap so thu hai: ");
-	scanf_s("%lf", &soThuHai);
+	scanf_s("%d", &b);
+	if (a > 0 && b > 0)
+	{
+		if (b > a)
+		{
+			int temp = b;
+			b = a;
+			a = temp;
+		}// a luon lon hon b
+
+		for (int i = 1; i <= b; i++)
+		{
+			if (a % i == 0 && b % i == 0)
+			{
+				uocSoChung = i;
+			}
+		}
+		boiSoChung = (a * b) / uocSoChung;
+		printf("Uoc so chung lon nhat la: %d\n", uocSoChung);
+		printf("Boi so chung nho nhat la: %d\n", boiSoChung);
+	}
+	else
+	{
+		printf("So khong hop le, hay nhap so nguyen duong!\n");
+	}
 }
+//Done
 void tinhTienQuanKaraoke()
 {
 	double gioBatDau, gioKetThuc, soGioThue, tienThanhToan;
