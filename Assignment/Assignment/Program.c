@@ -6,9 +6,39 @@
 void kiemTraSoNguyen()
 {
 	double soCanKiemTra;
+	int soNguyen;
 	printf("Nhap so can kiem tra: ");
 	scanf_s("%lf", &soCanKiemTra);
+	soNguyen = (int)soCanKiemTra;
+	if (soCanKiemTra == soNguyen)
+	{
+		printf("%.2f la so nguyen.\n", soCanKiemTra);
+		for (int i = sqrt((int)soCanKiemTra); i <= sqrt((int)soCanKiemTra); i++)
+		{
+			if ((int)soCanKiemTra % i == 0)
+			{
+				printf("%.2f khong phai la so nguyen to.\n ", soCanKiemTra); 
+			}
+			else if (soCanKiemTra <= 1)
+			{
+			  printf("%.2f khong phai la so nguyen to.\n ", soCanKiemTra);
+			}
+			else { printf("%.2f la so nguyen to.\n ", soCanKiemTra); }
+			if (sqrt((int)soCanKiemTra) == (int)sqrt((int)soCanKiemTra))
+			{
+			  printf("%.2f la so chinh phuong.\n ", soCanKiemTra);
+			}
+			else { printf("%.2f khong phai la so chinh phuong.\n ", soCanKiemTra); }
+		}
+	}
+	else
+	{
+		printf("%.2f khong phai la so nguyen.\n", soCanKiemTra);
+		printf("%.2f khong phai la so nguyen to.\n ", soCanKiemTra);
+		printf("%.2f khong phai la so chinh phuong.\n ", soCanKiemTra);
+	}
 }
+//Done
 void uocChungvaBoiChung()
 {
 	double soThuNhat, soThuHai, uocSoChung, boiSoChung;

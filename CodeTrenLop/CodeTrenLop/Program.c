@@ -2,10 +2,14 @@
 // Chuong trinh phan mem Bat dau thuc thi & Ket thuc o day.
 
 #include <stdio.h>
-
+#include <math.h>
 int main()
 {
-    printf("Hi there!\n");
+	char ten[50];
+	printf("Nhap ten cua ban: ");
+	puts(ten);//nhap gia tri cua mang 
+	gets(ten);// nhan khoang trong
+	printf("Ten cua ban la %s", ten);
 }
 
 // Debug/Run chuong trinh: bam "F5" hoac "Debug > Start Debugging" tren menu
