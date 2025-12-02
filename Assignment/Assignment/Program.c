@@ -236,8 +236,42 @@ void gameFpolyLott()
 }
 void tinhToanPhanSo()
 {
-
+	int tu1, mau1, tu2, mau2;
+	printf("Nhap tu so phan so 1: ");
+	scanf_s("%d", &tu1);
+	printf("Nhap mau so phan so 1: ");
+	scanf_s("%d", &mau1);
+	printf("Nhap tu so phan so 2: ");
+	scanf_s("%d", &tu2);
+	printf("Nhap mau so phan so 2: ");
+	scanf_s("%d", &mau2);
+	if (mau1 != 0 && mau2 != 0)
+	{
+		printf("Phan so 1 la: %d/%d\n", tu1, mau1);
+		printf("Phan so 2 la: %d/%d\n", tu2, mau2);
+		// tinh tong phan so
+		int tuTong = tu1 * mau2 + tu2 * mau1;
+		int mauTong = mau1 * mau2;
+		printf("Tong hai phan so la: %d/%d\n", tuTong, mauTong);
+		// tinh hieu phan so
+		int tuHieu = tu1 * mau2 - tu2 * mau1;
+	    int mauHieu = mauTong;
+		printf("Hieu hai phan so la: %d/%d\n", tuHieu, mauHieu);
+		// tinh tich phan so
+		int tuTich = tu1 * tu2;
+		int mauTich = mau1 * mau2;
+		printf("Tich hai phan so la: %d/%d\n", tuTich, mauTich);
+		// tinh thuong phan so
+		int tuThuong = tu1 * mau2;
+		int mauThuong = mau1 * tu2;
+		printf("Thuong hai phan so la: %d/%d\n", tuThuong, mauThuong);
+	}
+	else
+	{
+		printf("Phan so khong hop le ( mau so phai khac 0 )!\n");
+	}
 }
+//Done
 int hamVongLap(int n)
 {
 	int luaChon = 1;
@@ -281,6 +315,7 @@ int hamVongLap(int n)
 		printf("----------------------------------------------------\n");
 	}
 }
+//Done
 int main()
 {
 	int n;
@@ -303,6 +338,7 @@ int main()
 		hamVongLap(n);
 	} while (n != 0);
 }
+//Done
 
 // Debug/Run chuong trinh: bam "F5" hoac "Debug > Start Debugging" tren menu
 
