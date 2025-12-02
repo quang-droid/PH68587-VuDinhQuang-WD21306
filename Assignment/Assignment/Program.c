@@ -74,13 +74,36 @@ void uocChungvaBoiChung()
 //Done
 void tinhTienQuanKaraoke()
 {
-	double gioBatDau, gioKetThuc, soGioThue, tienThanhToan;
+	int gioBatDau, gioKetThuc, soGioThue;
+	double tienThanhToan;
+	printf("Quan Karaoke mo cua tu 12 gio den 23 gio .\n");
 	printf("Nhap gio bat dau: ");
-	scanf_s("%lf", &gioBatDau);
+	scanf_s("%d", &gioBatDau);
 	printf("Nhap gio ket thuc: ");
-	scanf_s("%lf", &gioKetThuc);
-	soGioThue = gioKetThuc - gioBatDau;
+	scanf_s("%d", &gioKetThuc);
+	if (gioBatDau < 12 || gioKetThuc > 23 || gioBatDau >= gioKetThuc)
+	{
+		printf("Gio khong hop le!\n");
+	}
+	else
+	{
+		soGioThue = gioKetThuc - gioBatDau;
+		if (soGioThue <= 3)
+		{
+			tienThanhToan = soGioThue * 50000;
+		}
+		else
+		{
+			tienThanhToan = 3 * 50000 + (soGioThue - 3) * 50000 * 0.7;
+		}
+		if (gioBatDau >= 14 && gioKetThuc <= 17)
+		{
+			tienThanhToan = tienThanhToan * 0.9;
+		}
+		printf("So tien phai thanh toan la: %.2f VND\n", tienThanhToan);
+	}
 }
+//Done
 void tinhTienDien()
 {
 	double soDienTieuThu, tienDien;
