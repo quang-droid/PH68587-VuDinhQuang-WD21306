@@ -146,17 +146,86 @@ void tinhTienDien()
 //Done
 void doiTien()
 {
-	double soTienCanDoi;
-
+	int soTienCanDoi;
+	int a[9] = { 500000, 200000, 100000, 50000, 20000, 10000, 5000, 2000, 1000 };
+	printf("Nhap so tien can doi (VND): ");
+	scanf_s("%d", &soTienCanDoi);
+	if (soTienCanDoi > 0)
+	{
+		for (int i = 0; i < 9; i++)
+		{
+			if (soTienCanDoi >= a[i])
+			{
+				int soTo = soTienCanDoi / a[i];
+				soTienCanDoi = soTienCanDoi - soTo * a[i];
+				printf("so to %d VND: %d to\n", a[i], soTo);
+			}
+		}
+	}
+	else
+	{
+		printf("So tien khong hop le!\n");
+	}
 }
+//Done
 void tinhLaiSuatVayNganHang()
 {
-
+	double lai1Thang = 0.05;
+	int soTienVay;
+	int a[12];
+	int noGoc;
+	printf("Nhap so tien vay (VND): ");
+	scanf_s("%d", &soTienVay);
+	noGoc = soTienVay / 12;
+	if (soTienVay > 0)
+	{
+		for (int i = 0; i < 12; i++)
+		{
+			a[i] = noGoc + (soTienVay - noGoc * i) * lai1Thang;
+			printf("Thang %d: So tien phai tra la: %d VND\n", i + 1, a[i]);
+		}
+	}
+	else
+	{
+		printf("So tien khong hop le!\n");
+	}
 }
+//Done
 void vayTienMuaXeTraGop()
+// muon nhap them thoi han vay thi them scanf thoi han vay va thay vao chuong trinh
+// neu don vi thoi han vay la nam thi giu nguyen, neu don vi thoi han vay la thang thi khong chia cho 12
+// bai lam da them phan tien duoc vay, muon sua tien vay co dinh thi bo "if-else" di, them gia tri co dinh cua tien duoc vay vao chuong trinh
 {
-
+	double soPhanTramVay;
+	double thoiHanVayToiDa = 24;
+	double laiSuatCoDinhNam = 0.072;
+	double tienDuocVayCoDinh;
+	double tienTraLanDau, tienTraHangThang;
+	printf("Nhap so tien muon vay (Toi da 500trieu) (VND): ");
+	scanf_s("%lf", &tienDuocVayCoDinh);
+	if (tienDuocVayCoDinh > 0 && tienDuocVayCoDinh <= 500000000)
+	{
+		printf("Nhap so phan tram vay : ");
+		scanf_s("%lf", &soPhanTramVay);
+		if (soPhanTramVay > 0 && soPhanTramVay <= 100)
+		{
+			tienTraLanDau = tienDuocVayCoDinh * (soPhanTramVay / 100);
+			tienTraHangThang = tienDuocVayCoDinh * (1 + laiSuatCoDinhNam * (thoiHanVayToiDa / 12)) / thoiHanVayToiDa;
+			printf("So tien duoc vay la: %.2f VND\n", tienDuocVayCoDinh);
+			printf("So tien phai tra lan dau la: %.2f VND\n", tienTraLanDau);
+			printf("So tien phai tra hang thang la: %.2f VND\n", tienTraHangThang);
+		}
+		else
+		{
+			printf("So phan tram vay khong hop le!\n");
+		}
+	}
+	else
+	{
+		printf("So tien khong hop le!\n");
+	}
 }
+//Done
 void sapXepThongTinSinhVien()
 {
 
