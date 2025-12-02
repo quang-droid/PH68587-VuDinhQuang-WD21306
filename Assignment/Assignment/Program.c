@@ -15,7 +15,7 @@ void kiemTraSoNguyen()
 		printf("%.2f la so nguyen.\n", soCanKiemTra);
 		for (int i = sqrt((int)soCanKiemTra); i <= sqrt((int)soCanKiemTra); i++)
 		{
-			if ((int)soCanKiemTra % i == 0)
+			if ((int)soCanKiemTra % i == 0 && i != 1)
 			{
 				printf("%.2f khong phai la so nguyen to.\n ", soCanKiemTra); 
 			}
