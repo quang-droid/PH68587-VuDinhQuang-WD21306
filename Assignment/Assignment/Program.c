@@ -233,12 +233,42 @@ void sapXepThongTinSinhVien()
 }
 void gameFpolyLott()
 {
-	int randomNumber;
-	for (int i = 0; i < 10; i++)
+	int nhap1, nhap2;
+	int trung1, trung2;
+	int trungGiai = -1;
+	printf("Moi nhap so thu nhat ( 1 den 15 ): ");
+	scanf_s("%d", &nhap1);
+	printf("Moi nhap so thu hai ( 1 den 15 ): ");
+	scanf_s("%d", &nhap2);
+	trung1 = (rand() % 15) + 1;
+	trung2 = (rand() % 15) + 1;
+	printf("Ket qua so may man la %d va %d\n", trung1, trung2);
+	if (nhap1 == trung1 || nhap1 == trung2)
 	{
-		randomNumber;
+		trungGiai++;
+	}
+	if (nhap2 == trung1 || nhap2 == trung2);
+	{
+		trungGiai++;
+	}
+	if (trungGiai == 0)
+	{
+		printf("Chuc ban may man lan sau\n");
+	}
+	else if (trungGiai == 1)
+	{
+		printf("Chuc mung ban da trung gai Nhi\n");
+	}
+	else if (trungGiai == 2)
+	{
+		printf("Chuc mung ban da trung giai Nhat\n");
+	}
+	else
+	{
+		printf("Chuc mung ban da trung giai Nhat\n");
 	}
 }
+//Done
 void tinhToanPhanSo()
 {
 	int tu1, mau1, tu2, mau2;
@@ -282,6 +312,7 @@ int hamVongLap(int n)
 	int luaChon = 1;
 	while (luaChon == 1)
 	{
+		printf("----------------------------------------------------\n");
 		switch (n)
 		{
 		case 1:
@@ -317,8 +348,8 @@ int hamVongLap(int n)
 		}
 		printf("Ban co muon tiep tuc khong (1: Co, 0: Khong): ");
 		scanf_s("%d", &luaChon);
-		printf("----------------------------------------------------\n");
 	}
+	printf("----------------------------------------------------\n");
 }
 //Done
 int main()
