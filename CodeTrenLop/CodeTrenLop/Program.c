@@ -3,13 +3,47 @@
 
 #include <stdio.h>
 #include <math.h>
+void demoString()
+{
+	// string
+	char name[50] = { 'A', 'n', 'h' };
+	// gets(name); > fgets();      khong dung duoc khoang trang
+	//for (int i = 0; i < 10; i++)
+	//{
+	//	scanf_s(" %c", &name[i]);
+	//}
+	while (getchar() != '\n');
+	printf("Nhap ten cua ban: ");
+	fgets(name, sizeof(name), stdin); //nhap duoc khoang trang
+	// xuat du lieu = for + printf
+	printf(" %s", name);
+	printf("\n");
+	//puts(name) thay the cho ca mang for bao gom ca dau xuong dong
+}
+void demoMang2Chieu()
+{
+	int array[2][3];
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("mang[%d][%d] = ", i, j);
+			scanf_s("%d", &array[i][j]);
+		}
+	}
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("%d, ", array[i][j]);
+		}
+		printf("\n");
+	}
+}
 int main()
 {
-	char ten[50];
-	printf("Nhap ten cua ban: ");
-	puts(ten);//nhap gia tri cua mang 
-	gets(ten);// nhan khoang trong
-	printf("Ten cua ban la %s", ten);
+	demoString();
+	return;
 }
 
 // Debug/Run chuong trinh: bam "F5" hoac "Debug > Start Debugging" tren menu

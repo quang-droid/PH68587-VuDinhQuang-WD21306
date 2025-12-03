@@ -200,7 +200,7 @@ void vayTienMuaXeTraGop()
 	double thoiHanVayToiDa = 24;
 	double laiSuatCoDinhNam = 0.072;
 	double tienDuocVayCoDinh;
-	double tienTraLanDau, tienTraHangThang;
+	double tienTraLanDau, tienTraHangThang; 
 	printf("Nhap so tien muon vay (Toi da 500trieu) (VND): ");
 	scanf_s("%lf", &tienDuocVayCoDinh);
 	if (tienDuocVayCoDinh > 0 && tienDuocVayCoDinh <= 500000000)
@@ -232,7 +232,11 @@ void sapXepThongTinSinhVien()
 }
 void gameFpolyLott()
 {
-
+	int randomNumber;
+	for (int i = 0; i < 10; i++)
+	{
+		randomNumber;
+	}
 }
 void tinhToanPhanSo()
 {
