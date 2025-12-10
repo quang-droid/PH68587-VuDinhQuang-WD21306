@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+
 void demoString()
 {
 	// string
@@ -54,7 +55,29 @@ void demoString()
 	{
 		printf("NOT FOUND");
 	}
-
+}
+void cacSoChiaHetCho3()
+{
+	int n;
+	int tong = 0;
+	//
+	scanf_s("%d", &n);
+	int j = 0;
+	for (int i =0; i <= n; i++)
+	{
+		if (i % 3 == 0)
+		{
+			tong += i;
+			j++;
+			//printf("%d, ", i);
+		}
+	}
+	printf("TBC: %d\n", tong / j );
+}
+void nhapThongTinSv()
+{
+	char ten[50];
+	int soLuong;  
 
 }
 void demoMang2Chieu()
@@ -77,10 +100,104 @@ void demoMang2Chieu()
 		printf("\n");
 	}
 }
+//              BAI THI THU 
+
+
+struct monHoc
+{
+	char tenMonHoc[50];
+	int maMonHoc;
+	int soTinChi;
+};
+void thongTinMonHoc()
+{
+	struct monHoc mh[4];
+	int hocPhiTinChi = 500000;
+	int hocPhiMonHoc;
+	for (int i = 0; i < 4; i++)
+	{
+		while (getchar() != '\n');
+		printf("Nhap ten mon hoc: ");
+		fgets(mh[i].tenMonHoc, sizeof(mh[i].tenMonHoc), stdin);
+		printf("Nhap ma mon hoc: ");
+		scanf_s("%d", &mh[i].maMonHoc);
+		printf("Nhap so tin chi: ");
+		scanf_s("%d", &mh[i].soTinChi);
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		printf("-------------------------------\n");
+		printf("Ten mon hoc: %s", mh[i].tenMonHoc);
+		printf("Ma mon hoc: %d\n", mh[i].maMonHoc);
+		printf("So tin chi: %d\n", mh[i].soTinChi);
+		printf("Hoc phi mon hoc: %d\n", mh[i].soTinChi * hocPhiTinChi);
+	}
+}
+void tinhTongSoLe()
+{
+	int n;
+	int tong = 0;
+	printf("Nhap n: ");
+	scanf_s("%d", &n);
+	if (n % 2 == 0)
+	{
+		printf("%d la so chan\n", n);
+	}
+	else
+	{
+		printf("%d la so le\n", n);
+	}
+	for (int i = 0; i < n; i++)
+	{
+		if (i % 2 == 1)
+		{
+			tong += i;
+			printf("%d, ", i);
+		}
+	}
+	printf("Tong cac so le tu 0 den %d la: %d\n", n, tong);
+}
+void thongTinDiemLAB()
+{
+
+}
+int hamVongLap(int n)
+{
+	int luaChon = 1;
+	while (luaChon == 1)
+	{
+		printf("--------------------------------------------------\n");
+		switch (n)
+		{
+		case 1:
+			thongTinMonHoc();
+			break;
+		case 2:
+			tinhTongSoLe();
+			break;
+		case 3:
+			thongTinDiemLAB();
+			break;
+		}
+		printf("Ban co muon tiep tuc khong (1: Co / 0: Khong): ");
+		scanf_s("%d", &luaChon);
+	}
+	printf("-------------------------------------------\n");
+}
 int main()
 {
-	demoString();
-	return;
+	int n;
+	do
+	{
+		printf("In Menu\n");
+		puts("0. Thoat");
+		puts("1.Thong tin mon hoc");
+		puts("2.Tinh tong so le");
+		puts("3.Thong tin diem LAB");
+		printf("Moi nhap lua chon: ");
+		scanf_s("%d", &n);
+		hamVongLap(n);
+	} while (n != 0);
 }
 
 // Debug/Run chuong trinh: bam "F5" hoac "Debug > Start Debugging" tren menu
