@@ -109,6 +109,11 @@ struct monHoc
 	int maMonHoc;
 	int soTinChi;
 };
+struct thongTinSv 
+{
+	char hoTen[50];
+	float diemLab;
+};
 void thongTinMonHoc()
 {
 	struct monHoc mh[4];
@@ -159,6 +164,21 @@ void tinhTongSoLe()
 }
 void thongTinDiemLAB()
 {
+	struct thongTinSv sv[3];
+	for (int i = 0; i < 3; i++)
+	{
+		while (getchar() != '\n');
+		printf("Moi nhap ten sinh vien: ");
+		fgets(sv[i].hoTen, sizeof(sv[i].hoTen), stdin);
+		printf("Nhap so diem: ");
+		scanf_s("%d", sv[i].diemLab);
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		printf("---------------------------");
+		printf("%s\n", sv[i].hoTen);
+		printf("%d\n", sv[i].diemLab);
+	}
 
 }
 int hamVongLap(int n)
