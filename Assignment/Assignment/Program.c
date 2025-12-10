@@ -234,7 +234,6 @@ void vayTienMuaXeTraGop()
 //Done
 void sapXepThongTinSinhVien()
 {
-		int chon;
 		printf(" Thuc thi sap xep sinh vien  \n");
 		int n;
 		struct SinhVien sv[100];
