@@ -181,6 +181,135 @@ void thongTinDiemLAB()
 	}
 
 }
+//int hamVongLap(int n)
+//{
+//	int luaChon = 1;
+//	while (luaChon == 1)
+//	{
+//		printf("--------------------------------------------------\n");
+//		switch (n)
+//		{
+//		case 1:
+//			thongTinMonHoc();
+//			break;
+//		case 2:
+//			tinhTongSoLe();
+//			break;
+//		case 3:
+//			thongTinDiemLAB();
+//			break;
+//		}
+//		printf("Ban co muon tiep tuc khong (1: Co / 0: Khong): ");
+//		scanf_s("%d", &luaChon);
+//	}
+//	printf("-------------------------------------------\n");
+//}
+//int main()
+//{
+//	int n;
+//	do
+//	{
+//		printf("In Menu\n");
+//		puts("0. Thoat");
+//		puts("1.Thong tin mon hoc");
+//		puts("2.Tinh tong so le");
+//		puts("3.Thong tin diem LAB");
+//		printf("Moi nhap lua chon: ");
+//		scanf_s("%d", &n);
+//		hamVongLap(n);
+//	} while (n != 0);
+//}
+// BAI THI THU LAN 2
+
+
+// BAI THI THU LAN 2
+struct thuCung
+{
+	char tenThuCung[50];
+	int maThucung;
+	int namSinh;
+};
+void thongTinThucung()
+{
+	struct thuCung tc[3];
+	int tuoi;
+	for (int i = 0; i < 3; i++)
+	{
+		while (getchar() != '\n');
+		printf("Nhap ten thu cung: ");
+		fgets(tc[i].tenThuCung, sizeof(tc[i].tenThuCung), stdin);
+		printf("Nhap ma thu cung: ");
+		scanf_s("%d", &tc[i].maThucung);
+		printf("Nhap nam sinh: ");
+		scanf_s("%d", &tc[i].namSinh);
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		printf("-------------------------------\n");
+		printf("Ten thu cung: %s", tc[i].tenThuCung);
+		printf("Ma thu cung: %d\n", tc[i].maThucung);
+		printf("Nam sinh: %d\n", tc[i].namSinh);
+		tuoi = 2025 - tc[i].namSinh;
+		printf("Tuoi: %d\n", tuoi);
+	}
+}
+void tinhTong()
+{
+	int n;
+	int tong = 0;
+	printf("Nhap so phan tu cua mang: ");
+	scanf_s("%d", &n);
+	for (int i = 0; i < n; i++)
+	{
+		if (i % 2 == 1)
+		{
+			tong += i;
+		}
+	}
+	if (n % 2 == 0)
+	{
+		printf("%d la so chan\n", n);
+	}
+	else 
+	{
+		printf("%d la so le\n", n);
+	}
+	printf("Tong cac so le tu 0 den %d la: %d\n", n, tong);
+}
+void thongTinCuaHang()
+{
+	int soluongThuCung;
+	float canNangThuCung[100];
+	float cangNangTrungBinh;
+	float tongCanNang = 0;
+	float nheNhat;
+	int soThuCungNheHonTB = 0;
+	printf("Nhap so luong thu cung: ");
+	scanf_s("%d", &soluongThuCung);
+	for (int i = 0; i < soluongThuCung; i++)
+	{
+		scanf_s("%f", &canNangThuCung[i]);
+	}
+	nheNhat = canNangThuCung[0];
+	for (int i = 0; i < soluongThuCung;i++)
+	{
+		tongCanNang += canNangThuCung[i];
+		if ( nheNhat > canNangThuCung[i])
+		{
+			nheNhat = canNangThuCung[i];
+		}
+	}
+	for (int i = 0; i < soluongThuCung; i++)
+	{
+		if (canNangThuCung[i] < (tongCanNang / soluongThuCung))
+		{
+			soThuCungNheHonTB++;
+		}
+	}
+	printf("Can nang trung binh: %f\n", tongCanNang / (float)soluongThuCung);
+	printf("Can nang nhe nhat: %f\n", nheNhat);
+	printf("So thu cung nhe hon can nang trung binh: %d\n", soThuCungNheHonTB);
+}
 int hamVongLap(int n)
 {
 	int luaChon = 1;
@@ -190,13 +319,13 @@ int hamVongLap(int n)
 		switch (n)
 		{
 		case 1:
-			thongTinMonHoc();
+			thongTinThucung();
 			break;
 		case 2:
-			tinhTongSoLe();
+			tinhTong();
 			break;
 		case 3:
-			thongTinDiemLAB();
+			thongTinCuaHang();
 			break;
 		}
 		printf("Ban co muon tiep tuc khong (1: Co / 0: Khong): ");
@@ -211,14 +340,16 @@ int main()
 	{
 		printf("In Menu\n");
 		puts("0. Thoat");
-		puts("1.Thong tin mon hoc");
-		puts("2.Tinh tong so le");
-		puts("3.Thong tin diem LAB");
+		puts("1.Thong tin thu cung");
+		puts("2.Tinh tong");
+		puts("3.Thong tin cua hang");
 		printf("Moi nhap lua chon: ");
 		scanf_s("%d", &n);
 		hamVongLap(n);
 	} while (n != 0);
 }
+
+
 
 // Debug/Run chuong trinh: bam "F5" hoac "Debug > Start Debugging" tren menu
 
